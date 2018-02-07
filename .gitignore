@@ -4,5 +4,4 @@ version.h
 test
 newtest
 *.o
-*.a
 *.swp
