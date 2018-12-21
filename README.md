@@ -55,11 +55,12 @@ SPI:
 
 ### Power and voltage requirements
 
-WS281X LEDs are generally driven at 5V, which requires that the data
-signal be at the same level.  Converting the output from a Raspberry
-Pi GPIO/PWM to a higher voltage through a level shifter is required.
+WS281X LEDs are generally driven at 5V. Depending on your actual
+LED model and data line length you might be able to successfully drive
+the data input with 3.3V. However in the general case you probably
+want to use a level shifter to convert from the Raspberry Pi GPIO/PWM to 5V.
 
-It is possible to run the LEDs from a 3.3V - 3.6V power source, and
+It is also possible to run the LEDs from a 3.3V - 3.6V power source, and
 connect the GPIO directly at a cost of brightness, but this isn't
 recommended.
 
@@ -78,14 +79,14 @@ reponsibility for damage, harm, or mistakes.
   - Signal rate (400kHz to 800kHz).  Default 800kHz.
   - ledstring.invert=1 if using a inverting level shifter.
   - Width and height of LED matrix (height=1 for LED string).
-- Type 'scons' from inside the source directory.
+- Type `scons` from inside the source directory.
 
 ### Running:
 
-- Type 'sudo ./test' (default uses PWM channel 0).
+- Type `sudo ./test` (default uses PWM channel 0).
 - That's it.  You should see a moving rainbow scroll across the
   display.
-- More options are available, ./test -h should show them:
+- More options are available, `./test -h` should show them:
 ```
 ./test version 1.1.0
 Usage: ./test
@@ -157,7 +158,7 @@ Do this by adding the following line to /boot/config.txt and reboot.
 ```
 
 SPI requires you to be in the `gpio` group if you wish to control your LEDs
-withou root.
+without root.
 
 ### Comparison PWM/PCM/SPI
 
