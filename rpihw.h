@@ -31,7 +31,6 @@
 #ifndef __RPIHW_H__
 #define __RPIHW_H__
 
-#include <stdint.h>
 
 typedef struct {
     uint32_t type;
